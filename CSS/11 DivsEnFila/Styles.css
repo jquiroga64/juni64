@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center; /* Centrar el contenido horizontalmente */
+    align-items: center; /* Centrar el contenido verticalmente */
+    height: 100vh; /* Para que ocupe toda la altura de la ventana */
+}
+
+.parent-container {
+    width: 90%; /* Ancho del 90% */
+    display: flex; 
+    justify-content: space-around; /* Espacio uniforme entre los hijos */
+    padding: 20px;
+    background-color: #ffffffb2;
+    border: 1px solid #f00000;
+    border-radius: 8px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.541);
+} 
+
+.child-container1,
+.child-container2,
+.child-container3,
+.child-container4,
+.child-container5 {
+    background-color: #a10000; /* Color específico para el Div 1 */
+    color: white;
+    padding: 20px;
+    margin: 10px; /* Márgenes entre los divs */
+    border-radius: 5px;
+    flex: 0 1 18%; /* Permitir que ocupen 18% del ancho */
+    text-align: center;
+    transition: background-color 0.3s;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.541);
+}
+
+.child-container1 {
+    background-color: #a10000; /* Color específico para el Div 1 */
+}
+
+.child-container2 {
+    background: radial-gradient(circle, #0b9406, #ffe600); /* Gradiente radial */
+}
+
+.child-container3 {
+    background-image: url('http://localhost/Trabajos/HTML/img/Back.png');
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen */
+    background-size: cover; /* Asegura que la imagen cubra todo el div */
+    border: 5px solid #ddd; /* Bordes alrededor del div */
+    height: 150px;
+}
+
+.child-container4 {
+    background: linear-gradient(90deg, #ff0000, #0000ff); 
+}
+
+.child-container5 {
+    background: linear-gradient(-90deg, #ff0000, #0000ff);
+}
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 600px) {
+    .child-container1,
+    .child-container2,
+    .child-container3,
+    .child-container4,
+    .child-container5 {
+        flex: 1 1 100%; /* Cada contenedor ocupa el 100% en pantallas pequeñas */
+        max-width: 100%; /* Sin límite de ancho */
+    }
+}

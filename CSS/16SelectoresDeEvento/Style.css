@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.miParrafo {
+    padding: 20px;
+    border: 1px solid #000;
+    transition: background-color 0.5s;
+}
+
+.cambiarEstilo:hover + .miParrafo {
+    background-color: yellow;
+}
+
+.boton-interactivo {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.boton-interactivo:hover {
+    background-color: orange;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    transform: scale(1.1);
+}

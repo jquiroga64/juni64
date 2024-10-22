@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Cambié 'fixed' por 'border-box' */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    margin: 0; /* Asegúrate de que el margen sea 0 */
+    padding: 0; /* Asegúrate de que el padding sea 0 */
+    background-image: url('http://localhost/Trabajos/HTML/img/cyberpunk-mclaren-supercars-neon-art-1920x1080-1003.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; /* Cubre todo el fondo */
+    background-attachment: fixed; /* La imagen permanece fija al desplazarse */
+    background-position: center center; /* Centra la imagen */
+    height: 100vh; /* Asegúrate de que el body tenga al menos la altura de la ventana */
+}
+
+nav {
+    size: 100%;
+    /*max-width: 900px;*/
+    margin: auto;
+    background-color: hsla(0, 0%, 20%, 0.5);
+    font-size: auto;
+}
+
+.menu-horizontal {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu-horizontal > li > a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.menu-horizontal > li:hover {
+    background-color: #5757579c;
+}
+
+
+.menu-vertical {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 200px;
+    background-color: rgba(0, 0, 0, .5);
+    opacity: 0; 
+    transition: opacity 0.5s ease; 
+}
+
+.menu-horizontal li:hover .menu-vertical {
+    opacity: 1;
+}
+
+.menu-vertical li:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.menu-vertical li a {
+    display: block;
+    color: white;
+    padding: 15px 15px 15px 20px;
+}

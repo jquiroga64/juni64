@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario ABM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+            text-align: left;
+        }
+
+        h1 {
+            color: #d4af37;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"] {
+            padding: 12px;
+            width: calc(100% - 24px);
+            border: 2px solid #d4af37;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #f8f8f8;
+            color: #333;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #000;
+            outline: none;
+        }
+
+        button {
+            background-color: #d4af37;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 15px;
+            margin: 10px 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #b5942a;
+        }
+
+        button:disabled {
+            background-color: #555;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h1>FORMULARIO ABM</h1>
+    <form id="form-abm">
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required>
+
+        <label for="nombres">Nombres:</label>
+        <input type="text" id="nombres" name="nombres" required>
+
+        <label for="saldo">Saldo:</label>
+        <input type="text" id="saldo" name="saldo" required>
+
+        <button id="btn-blanquear" type="button">Blanquear</button>
+        <button id="btn-alta" type="submit">Alta</button>
+        <button id="btn-mod" type="submit">Modificar</button>
+        <button id="btn-baja" type="submit">Baja</button>
+    </form>
+</div>
+
+<script>
+    const btnBlanquear = document.getElementById('btn-blanquear');
+    const btnAlta = document.getElementById('btn-alta');
+    const btnMod = document.getElementById('btn-mod');
+    const btnBaja = document.getElementById('btn-baja');
+
+    const apellido = document.getElementById('apellido');
+    const saldo = document.getElementById('saldo');
+
+    function toggleButtons() {
+        const isApellidoFilled = apellido.value.trim() !== '';
+        const isSaldoFilled = saldo.value.trim() !== '';
+
+        btnBlanquear.disabled = !isApellidoFilled;
+        btnAlta.disabled = !isSaldoFilled;
+        btnMod.disabled = !isSaldoFilled;
+        btnBaja.disabled = !isSaldoFilled;
+    }
+
+    function blanquearCampos() {
+        apellido.value = '';
+        document.getElementById('nombres').value = '';
+        saldo.value = '';
+        toggleButtons();
+    }
+
+    btnBlanquear.addEventListener('click', blanquearCampos);
+    apellido.addEventListener('input', toggleButtons);
+    saldo.addEventListener('input', toggleButtons);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Función Flecha en JavaScript</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            background-color: #ffffff;
+            border: 2px solid #f18b05;
+            border-radius: 5px;
+            padding: 15px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            margin: 10px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        span {
+            font-weight: bold;
+            color: #fa8500;
+        }
+    </style>
+</head>
+<body>
+    <h2>Función Flecha</h2>
+    <h4>const suma = (a, b) => { c=a+b; return c}</h4>
+    <h4>Resultado de la suma para a=5 y b=8: <span id="c"></span></h4>
+
+    <script>
+        const suma = (a, b) => {
+            return a + b;
+        };
+
+        const c = suma(5, 8);
+        document.getElementById('c').textContent = c;
+    </script>
+</body>
+</html>

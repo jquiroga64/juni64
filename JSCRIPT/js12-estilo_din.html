@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de Estilos Dinámico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        #miDiv {
+            width: 300px; 
+            height: auto; 
+            border: 2px solid #27ae60;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            background-color: #ffffff; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h3 {
+            color: #27ae60; 
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            text-align: left; 
+        }
+
+        li {
+            color: #333; 
+            margin: 5px 0; 
+        }
+
+        button {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #219150;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de cambios de estilo dinámicamente</h1>
+    
+    <div id="miDiv">
+        <h3>Lista con estilo</h3>
+        <ul id="miLista">
+            <li>Texto1</li>
+            <li>Texto2</li>
+            <li>Texto3</li>
+        </ul>
+    </div>
+
+    <div>
+        <button onclick="cambiarEstilo('tipo1')">Tipo 1 (Puntos)</button>
+        <button onclick="cambiarEstilo('tipo2')">Tipo 2 (ABC)</button>
+        <button onclick="cambiarEstilo('tipo3')">Tipo 3 (Puntos)</button>
+        <button onclick="cambiarEstilo('tipo4')">Tipo 4 (ABC)</button>
+    </div>
+
+    <script>
+        function cambiarEstilo(tipo) {
+            const miDiv = document.getElementById('miDiv');
+            const miLista = document.getElementById('miLista');
+            const items = miLista.getElementsByTagName('li');
+
+            miDiv.style.backgroundColor = obtenerColorAleatorio();
+
+            if (tipo === 'tipo1' || tipo === 'tipo3') {
+                miLista.style.listStyleType = 'disc'; 
+                for (let i = 0; i < items.length; i++) {
+                    items[i].textContent = items[i].textContent.replace(/^[a-z]\. /, ''); 
+                }
+            } else if (tipo === 'tipo2' || tipo === 'tipo4') {
+                miLista.style.listStyleType = 'none'; 
+                for (let i = 0; i < items.length; i++) {
+                    items[i].textContent = String.fromCharCode(97 + i) + '. ' + items[i].textContent; 
+                }
+            }
+        }
+
+        function obtenerColorAleatorio() {
+            const letras = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letras[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>

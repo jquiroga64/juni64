@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones Compartidas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        table {
+
+            border: #000000;
+            border-radius: 120px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        input[type="button"], button {
+            background-color: #f07400;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 15px 20px;
+            margin: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        input[type="button"]:hover, button:hover {
+            background-color: #f07400;
+        }
+
+        #acumulador {
+            margin-top: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Funciones Compartidas</h1>
+
+<table>
+    <tr>
+        <td><input type="button" value="1" onclick="SeleccionarNumero(1)"></td>
+        <td><input type="button" value="2" onclick="SeleccionarNumero(2)"></td>
+        <td><input type="button" value="3" onclick="SeleccionarNumero(3)"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="4" onclick="SeleccionarNumero(4)"></td>
+        <td><input type="button" value="5" onclick="SeleccionarNumero(5)"></td>
+        <td><input type="button" value="6" onclick="SeleccionarNumero(6)"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="7" onclick="SeleccionarNumero(7)"></td>
+        <td><input type="button" value="8" onclick="SeleccionarNumero(8)"></td>
+        <td><input type="button" value="9" onclick="SeleccionarNumero(9)"></td>
+    </tr>
+</table>
+
+<div>
+    <button onclick="sumar()">Sumar</button>
+    <button onclick="mostrarAcumulador()">Mostrar Acumulador</button>
+    <button onclick="borrarAcumulador()">Borrar Acumulador</button>
+    <button onclick="borrarDisplay()">Borrar Display</button>
+</div>
+
+<div id="acumulador">Resultado: 0</div>
+
+<script>
+    let acumulador = 0;
+    let numeroSeleccionado = 0;
+    let sumaPendiente = 0;
+
+    function SeleccionarNumero(valor) {
+        numeroSeleccionado = valor;
+    }
+
+    function sumar() {
+        sumaPendiente += numeroSeleccionado;
+        numeroSeleccionado = 0; 
+    }
+
+    function mostrarAcumulador() {
+        acumulador += sumaPendiente;
+        sumaPendiente = 0;
+        document.getElementById('acumulador').innerHTML = "Resultado: " + acumulador;
+    }
+
+    function borrarAcumulador() {
+        acumulador = 0;
+        mostrarAcumulador();
+    }
+
+    function borrarDisplay() {
+        document.getElementById('acumulador').innerHTML = "Resultado: 0";
+    }
+</script>
+
+</body>
+</html>

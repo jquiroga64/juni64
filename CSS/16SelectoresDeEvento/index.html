@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de Estilo</title>
+    <style>
+        .miParrafo {
+            font-size: 16px;
+            color: black;
+        }
+
+        .estilo1 {
+            font-size: 20px;
+            color: blue;
+            font-weight: bold;
+        }
+
+        .estilo2 {
+            font-size: 24px;
+            color: green;
+            text-decoration: underline;
+        }
+
+        .estilo3 {
+            font-size: 18px;
+            color: orange;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cambia el Estilo del Texto</h1>
+    <p class="miParrafo">Cambio si tocás los botones :D.</p>
+    
+    <div class="botones">
+        <button class="boton-interactivo" data-estilo="estilo1">Botón 1</button>
+        <button class="boton-interactivo" data-estilo="estilo2">Botón 2</button>
+        <button class="boton-interactivo" data-estilo="estilo3">Botón 3</button>
+    </div>
+
+    <script>
+        const botones = document.querySelectorAll('.boton-interactivo');
+        const parrafo = document.querySelector('.miParrafo');
+
+        botones.forEach(boton => {
+            boton.addEventListener('click', function() {
+                // Remover todas las clases de estilo
+                parrafo.classList.remove('estilo1', 'estilo2', 'estilo3');
+                
+                // Agregar la clase correspondiente
+                const estilo = this.getAttribute('data-estilo');
+                parrafo.classList.add(estilo);
+            });
+        });
+    </script>
+</body>
+</html>

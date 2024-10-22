@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100vh;
+}
+
+.parent-container {
+    width: 80%; /* Ancho del 80% */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrar horizontalmente los hijos */
+    padding: 20px;
+    background-color: #000000b2;
+    border: 1px solid #f00000;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+} 
+
+.child-container1 {
+    background-color: #a10000; /* Color específico para el Div 1 */
+    color: white;
+    padding: 20px;
+    margin: 10px; /* Márgenes entre los divs */
+    border-radius: 50px;
+    flex: 0 1 48%; /* Ancho del 50% menos margen */
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.child-container2 {
+    background: radial-gradient(circle, #0b9406, #ffe600); /* Gradiente radial */
+    color: white;
+    padding: 20px;
+    margin: 10px; /* Márgenes entre los divs */
+    border-radius: 5px;
+    flex: 0 1 48%; /* Ancho del 50% menos margen */
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.child-container3 {
+    background-image: url('D:/Trabajos/CSS/10DivsEnPila/images (1).jpeg');
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen */
+    background-color: black;
+    border-color: #a10000;
+    margin: 10px; /* Márgenes entre los divs */
+    border-radius: 5px; /* Bordes redondeados del div */
+    flex: 0 1 48%; /* Ancho del 50% menos margen */
+    height: 100%; /* Altura fija para el div, ajusta según sea necesario */
+    border: 5px solid #ddd; /* Bordes alrededor del div */
+    padding: 20px; /* Padding para el contenido dentro del div */
+    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el tamaño total */
+}
+
+
+.child-container4 {
+    color: white;
+    background: linear-gradient(90deg, #ff0000, #0000ff); 
+    padding: 20px;
+    margin: 10px; /* Márgenes entre los divs */
+    border-radius: 5px;
+    flex: 0 1 48%; /* Ancho del 50% menos margen */
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.child-container5 {
+    color: rgb(255, 255, 255);
+    background: linear-gradient(-90deg, #ff0000, #0000ff); 
+    padding: 20px;
+    margin: 10px; /* Márgenes entre los divs */
+    border-radius: 5px;
+    flex: 0 1 48%; /* Ancho del 50% menos margen */
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+*.child-container6 {
+    color: white;
+    background-color: #3F51B5; /* Color específico para el Div 6 */
+    padding: 20px;
+    margin: 10px; /* Márgenes entre los divs */
+    border-radius: 5px;
+    flex: 0 1 48%; /* Ancho del 50% menos margen */
+    text-align: center;
+    transition: background-color 0.3s;
+}

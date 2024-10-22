@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de Variables Simples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        
+        #resultado {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        @media (max-width: 600px) {
+            button {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Ejercicio de Variables Simples</h1>
+
+<div style="text-align: center;">
+    <button onclick="mostrarValor('a')">Valor de a</button>
+    <button onclick="mostrarValor('b')">Valor de b</button>
+    <button onclick="mostrarValor('c')">Valor de c</button>
+</div>
+
+<div id="resultado">Haz clic en un botón para ver el valor y tipo</div>
+
+<script>
+    var a = 42;        
+    var b = "1";      
+    var c = true;     
+
+    function mostrarValor(variable) {
+        let valor;
+        let tipo;
+
+        switch (variable) {
+            case 'a':
+                valor = a;
+                tipo = typeof a;
+                break;
+            case 'b':
+                valor = b;
+                tipo = typeof b;
+                break;
+            case 'c':
+                valor = c;
+                tipo = typeof c;
+                break;
+            default:
+                valor = "Variable no definida";
+                tipo = "N/A";
+        }
+
+        document.getElementById("resultado").innerHTML = `Valor de ${variable}: ${valor} <br> Tipo de ${variable}: ${tipo}`;
+    }
+</script>
+</body>
+</html>
